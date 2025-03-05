@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class LiteracyComparison {
     
-    public static void main(String[] args) {aaaaa
+    public static void main(String[] args) {aaaaabbbbb
 
     }
 }

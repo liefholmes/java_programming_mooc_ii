@@ -1,6 +1,5 @@
 
-
-public class Card {
+public class Card implements Comparable<Card> {
 
     private int value;
     private Suit suit;
@@ -17,7 +16,7 @@ public class Card {
     @Override
     public String toString() {
         String cardValue = "" + value;
-        if(value == 11) {
+        if (value == 11) {
             cardValue = "J";
         } else if (value == 12) {
             cardValue = "Q";
@@ -26,8 +25,22 @@ public class Card {
         } else if (value == 14) {
             cardValue = "A";
         }
-        
+
         return suit + " " + cardValue;
+    }
+    
+    
+    public int compareTo(Card card) {
+         if (this.value < card.getValue()) {
+             return -1;
+         }
+         if (this.value > card.getValue()) {
+             return 1;
+         }
+         if (this.value == card.getValue()) {
+             return this.suit.ordinal() - card.getSuit().ordinal();
+         }
+         return 0;
     }
 
     public int getValue() {
